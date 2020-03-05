@@ -3,6 +3,7 @@ import * as Blockly from 'blockly';
 import 'blockly/blocks';
 import 'blockly/javascript';
 import 'blockly/python';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-blockly-code',
@@ -55,12 +56,25 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
     } as Blockly.BlocklyOptions);
   }
 
-  save(){
+  save() {
     let xml = Blockly.Xml.workspaceToDom(this.workspace);
     var xml_text = Blockly.Xml.domToText(xml);
     console.log(xml_text);
+    let blob = new Blob([xml_text], { type: "text/plain;charset=utf-8" });
+    saveAs(blob)
   }
-  generateCode(){
+
+  load(xml_text) {
+    var reader = new FileReader();
+    reader.readAsText(xml_text.item(0))
+    reader.onload = (ev) => {
+      let file = ev.target.result.toString()
+      var xml = Blockly.Xml.textToDom(file);
+      Blockly.Xml.domToWorkspace(xml, this.workspace);
+
+    }
+  }
+  generateCode() {
     //@ts-ignore
     let code = Blockly.Python.workspaceToCode(this.workspace)
     console.log(code)

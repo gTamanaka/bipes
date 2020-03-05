@@ -21,6 +21,7 @@
     "@angular/router": "~9.0.3",
     "@angular/service-worker": "~9.0.3",
     "blockly": "^3.20200123.1",
+    "file-saver": "^2.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

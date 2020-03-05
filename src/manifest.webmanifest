@@ -6,6 +6,9 @@
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "permissions": [
+    "downloads"
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
