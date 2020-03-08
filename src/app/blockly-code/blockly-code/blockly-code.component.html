@@ -1,4 +1,9 @@
-<button (click)="save()">Save</button>
-<input (change)="load($event.target.files)" type="file">
-<button (click)= "generateCode()" >Gerar Código</button>
-<div style="height: 100vh; width: 100vw;" #blockly></div>
+
+<div class="container">
+        <button class="button" (click)="save()">Salvar</button>
+        <input (change)="load($event.target.files)" type="file">
+        <button class="button button is-primary is-pulled-right	" (click)="generateCode()">Gerar Código</button>
+</div>
+
+<div style="height: 50vh; width: 100vw;" #blockly></div>
+<app-webrepl></app-webrepl>

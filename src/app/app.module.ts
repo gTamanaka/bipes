@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BlocklyCodeModule } from './blockly-code/blockly-code.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BlocklyCodeModule } from './blockly-code/blockly-code.module';
     BrowserModule,
     AppRoutingModule,
     BlocklyCodeModule,
+    LayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
