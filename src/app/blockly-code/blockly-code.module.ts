@@ -10,6 +10,5 @@ import { BlocklyCodeComponent } from './blockly-code/blockly-code.component';
     CommonModule
   ],
   exports: [BlocklyCodeComponent],
-  // schemas:[NO_ERRORS_SCHEMA]
 })
 export class BlocklyCodeModule { }
