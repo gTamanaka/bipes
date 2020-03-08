@@ -1,7 +1,7 @@
 export default class LogicBlocks {
 
     getBlocks() {
-        return `<category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
+        return `<category name="Logic" colour="%{BKY_LOOPS_HUE}">
         <block type="controls_repeat_ext">
           <value name="TIMES">
             <shadow type="math_number">

@@ -1,7 +1,7 @@
 export default class TextBlocks {
     getBlocks(){
         return `
-        <category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
+        <category name="Text" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
       <block type="text_join"></block>
       <block type="text_append">

@@ -1,7 +1,7 @@
 export default class ColorBlocks{
     getBlocks(){
         return `
-        <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
+        <category name="Colors" colour="%{BKY_COLOUR_HUE}">
       <block type="colour_picker"></block>
       <block type="colour_random"></block>
       <block type="colour_rgb">

@@ -1,7 +1,7 @@
 export default class LoopBlocks {
 
     getBlocks() {
-        return `<category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
+        return `<category name="Loops" colour="%{BKY_LOGIC_HUE}">
         <block type="controls_if"></block>
         <block type="logic_compare"></block>
         <block type="logic_operation"></block>

@@ -16,8 +16,8 @@ export default class CustomToolBox {
         ${ListBlocks}
         ${ColorBlocks}
         <sep></sep>
-        <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-        <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+        <category name="Variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+        <category name="Functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
       </xml>
     `
     }

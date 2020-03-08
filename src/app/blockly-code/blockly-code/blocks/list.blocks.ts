@@ -1,7 +1,7 @@
 export default class ListBlocks{
     getBlocks() {
         return `
-        <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
+        <category name="Lists" colour="%{BKY_LISTS_HUE}">
       <block type="lists_create_with">
         <mutation items="0"></mutation>
       </block>

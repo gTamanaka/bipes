@@ -1,7 +1,7 @@
 export default class MathBlocks {
 
     getBlocks() {
-        return `<category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+        return `<category name="Math" colour="%{BKY_MATH_HUE}">
         <block type="math_number">
           <field name="NUM">123</field>
         </block>
