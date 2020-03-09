@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { BlocklyCodeComponent } from './blockly-code/blockly-code.component';
 import { WebreplComponent } from './webrepl/webrepl.component';
 import { TerminalComponent } from './terminal/terminal.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { TextEditorComponent } from './text-editor/text-editor.component';
 
 
 @NgModule({
-  declarations: [BlocklyCodeComponent, WebreplComponent, TerminalComponent],
+  declarations: [BlocklyCodeComponent, WebreplComponent, TerminalComponent, TextEditorComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [BlocklyCodeComponent],
 })

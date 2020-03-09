@@ -15,6 +15,9 @@ import * as Br from 'blockly/msg/pt-br';
 export class BlocklyCodeComponent implements OnInit, AfterViewInit {
   @ViewChild('blockly') blockyDiv: ElementRef;
   workspace: Blockly.Workspace
+  filename = ""
+  whatIsVisible="blocos"
+  code = ""
   constructor() { }
 
   ngOnInit(): void {
@@ -45,8 +48,12 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
     let xml = Blockly.Xml.workspaceToDom(this.workspace);
     var xml_text = Blockly.Xml.domToText(xml);
     console.log(xml_text);
-    let blob = new Blob([xml_text], { type: "text/plain;charset=utf-8" });
-    saveAs(blob)
+    let blob = new Blob([xml_text], { type: "text/plain;charset=utf-8",  });
+    console.log(this.filename)
+    // if(this.filename == ""){
+    //   return window.alert("Defina um nome para o arquivo")
+    // }
+    saveAs(blob, this.filename)
   }
 
   load(xml_text) {
@@ -61,11 +68,14 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
   }
   async generateCode() {
     //@ts-ignore
-    let code = Blockly.Python.workspaceToCode(this.workspace)
-    console.log(code)
+    this.code = Blockly.Python.workspaceToCode(this.workspace)
     //f@ts-ignore
     // navigator.usb.requestDevice({ filters: [] }).then(async function (device) {
     //   console.log(await device.open());
     // });
+  }
+
+  changeExibition(state){
+    this.whatIsVisible = state
   }
 }

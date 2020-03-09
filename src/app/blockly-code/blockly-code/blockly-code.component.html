@@ -2,14 +2,27 @@
         <div class="xml-btn-holder">
                 <button class="button" style="margin-right: 8px;" (click)="save()">Salvar</button>
                 <input class="custom-file-input" (change)="load($event.target.files)" type="file" name="file" id="file">
-                <label class="button" for="file">Carregar</label>
+                <label class="button" style="margin-right: 8px;" for="file">Carregar</label>
+                <input class="input" type="text" placeholder="Filename" [(value)]="filename">
         </div>
         <div class="code-btn-holder">
-                <button class="button button is-primary is-pulled-right	" (click)="generateCode()">Gerar Código</button>
+                <button class="button button is-primary is-pulled-right	" (click)="generateCode()">Rodar Código</button>
+        </div>
+</div>
+<div class="container">
+        <div class="tabs">
+                <ul>
+                        <li (click)="changeExibition('blocos')" [class.is-active]="whatIsVisible == 'blocos'">
+                                <a>Blocos</a></li>
+                        <li (click)="changeExibition('codigo')" [class.is-active]="whatIsVisible == 'codigo'" (click)="generateCode()">
+                                <a>Código</a></li>
+                </ul>
         </div>
 </div>
 
 <div style="height: 50vh; width: 100vw;">
-        <div style="height: 50vh; width: 100vw;" #blockly></div>
+        <div [hidden]="whatIsVisible != 'blocos'" [class.editor-area]="whatIsVisible == 'blocos'" #blockly></div>
+        <app-text-editor [hidden]="whatIsVisible != 'codigo'" [class.editor-area]="whatIsVisible == 'codigo'" [codigo]="code"></app-text-editor>
 </div>
+
 <app-terminal></app-terminal>
