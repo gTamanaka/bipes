@@ -1,9 +1,15 @@
-
-<div class="container">
-        <button class="button" (click)="save()">Salvar</button>
-        <input (change)="load($event.target.files)" type="file">
-        <button class="button button is-primary is-pulled-right	" (click)="generateCode()">Gerar Código</button>
+<div class="container inline">
+        <div class="xml-btn-holder">
+                <button class="button" style="margin-right: 8px;" (click)="save()">Salvar</button>
+                <input class="custom-file-input" (change)="load($event.target.files)" type="file" name="file" id="file">
+                <label class="button" for="file">Carregar</label>
+        </div>
+        <div class="code-btn-holder">
+                <button class="button button is-primary is-pulled-right	" (click)="generateCode()">Gerar Código</button>
+        </div>
 </div>
 
-<div style="height: 50vh; width: 100vw;" #blockly></div>
-<app-webrepl></app-webrepl>
+<div style="height: 50vh; width: 100vw;">
+        <div style="height: 50vh; width: 100vw;" #blockly></div>
+</div>
+<app-terminal></app-terminal>

@@ -1,3 +1,22 @@
 .btn-holder{
     padding: 8px 0;
 }
+
+.custom-file-input{
+    display: none;
+}
+
+.xml-btn-holder{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+.code-btn-holder{
+    @extend .xml-btn-holder;
+    justify-content: flex-end;
+}
+.inline{
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+}

@@ -63,9 +63,9 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
     //@ts-ignore
     let code = Blockly.Python.workspaceToCode(this.workspace)
     console.log(code)
-    //@ts-ignore
-    // navigator.usb.requestDevice({ filters: [] }).then(function (device) {
-    //   console.log(device);
+    //f@ts-ignore
+    // navigator.usb.requestDevice({ filters: [] }).then(async function (device) {
+    //   console.log(await device.open());
     // });
   }
 }
