@@ -5,13 +5,22 @@ import { WebreplComponent } from './webrepl/webrepl.component';
 import { TerminalComponent } from './terminal/terminal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextEditorComponent } from './text-editor/text-editor.component';
+import { CustomToolboxService } from './blockly-code/blocks/custom-toolbox.service';
 
 
 @NgModule({
-  declarations: [BlocklyCodeComponent, WebreplComponent, TerminalComponent, TextEditorComponent],
+  declarations: [
+    BlocklyCodeComponent, 
+    WebreplComponent, 
+    TerminalComponent, 
+    TextEditorComponent, 
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule
+  ],
+  providers:[
+    CustomToolboxService
   ],
   exports: [BlocklyCodeComponent],
 })

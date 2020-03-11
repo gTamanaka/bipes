@@ -4,9 +4,9 @@ import 'blockly/blocks';
 import 'blockly/javascript';
 import 'blockly/python';
 import { saveAs } from 'file-saver';
-import CustomToolBox from './blocks/toolbox';
 import * as Br from 'blockly/msg/pt-br';
-
+import { CustomToolboxService } from './blocks/custom-toolbox.service';
+import 'custom-blocks/blocks'
 @Component({
   selector: 'app-blockly-code',
   templateUrl: './blockly-code.component.html',
@@ -16,9 +16,12 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
   @ViewChild('blockly') blockyDiv: ElementRef;
   workspace: Blockly.Workspace
   filename = ""
-  whatIsVisible="blocos"
+  whatIsVisible = "blocos"
   code = ""
-  constructor() { }
+  toolbox
+  constructor(customToolboxService: CustomToolboxService) {
+    this.toolbox = customToolboxService.getToolbox()
+  }
 
   ngOnInit(): void {
   }
@@ -39,16 +42,16 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
         snap: true
       },
       trashcan: true,
-      toolbox: new CustomToolBox().getToolbox()
+      toolbox: this.toolbox
     } as Blockly.BlocklyOptions);
     Blockly.setLocale(Br);
   }
 
-  save() {
+   save() {
     let xml = Blockly.Xml.workspaceToDom(this.workspace);
     var xml_text = Blockly.Xml.domToText(xml);
     console.log(xml_text);
-    let blob = new Blob([xml_text], { type: "text/plain;charset=utf-8",  });
+    let blob = new Blob([xml_text], { type: "text/plain;charset=utf-8", });
     console.log(this.filename)
     // if(this.filename == ""){
     //   return window.alert("Defina um nome para o arquivo")
@@ -68,14 +71,15 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
   }
   async generateCode() {
     //@ts-ignore
-    this.code = Blockly.Python.workspaceToCode(this.workspace)
+    this.code = Blockly.JavaScript.workspaceToCode(this.workspace)
+    console.log(this.code)
     //f@ts-ignore
     // navigator.usb.requestDevice({ filters: [] }).then(async function (device) {
     //   console.log(await device.open());
     // });
   }
 
-  changeExibition(state){
+  changeExibition(state) {
     this.whatIsVisible = state
   }
 }

@@ -21,6 +21,7 @@ export class TextEditorComponent implements OnInit, AfterViewInit, OnChanges {
     });
     console.log(this.codigo)
     this.flask.updateCode('const my_new_code_here = "Blabla"');
+    this.flask.addLanguage('python')
   }
   ngOnChanges(){
     console.log(this.codigo)
