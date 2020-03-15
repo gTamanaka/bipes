@@ -71,7 +71,7 @@ export class BlocklyCodeComponent implements OnInit, AfterViewInit {
   }
   async generateCode() {
     //@ts-ignore
-    this.code = Blockly.JavaScript.workspaceToCode(this.workspace)
+    this.code = Blockly.Python.workspaceToCode(this.workspace)
     console.log(this.code)
     //f@ts-ignore
     // navigator.usb.requestDevice({ filters: [] }).then(async function (device) {

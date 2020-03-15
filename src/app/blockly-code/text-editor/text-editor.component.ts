@@ -17,7 +17,7 @@ export class TextEditorComponent implements OnInit, AfterViewInit, OnChanges {
 
   ngAfterViewInit() {
     this.flask = new CodeFlask(this.codeFlask.nativeElement, {
-      language: 'python', readonly: true, lineNumbers: true
+      language: 'python', lineNumbers: true
     });
     console.log(this.codigo)
     this.flask.updateCode('const my_new_code_here = "Blabla"');
